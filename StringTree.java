@@ -6,20 +6,32 @@ import java.util.*;
  * 
  * Ethan Mullins
  * 4-27-20
- * cse274 - project6
  *
  */
 
 /*
  * Class that stores 6 letter strings efficiently. Has a private Node class, and the head
- * of that node does not store any data.Any node in the tree will have up to 26 children 
+ * of the tree does not store any data. Any node in the tree will have up to 26 children 
  * (the number of English letters, all lowercase). At each level you will store a single letter of the word. 
  * If multiple words have the same starting letter(s) then you will store the 
  * similar letters once and then they will split into different sub-trees.
+ * For example: if you added "amazon" and "amazin" it would look like this in theory:
+ *                              _ 
+ *                              a
+ *                              |
+ *                              m
+ *                              |
+ *                              a
+ *                              |
+ *                              z
+ *                            /   \
+ *                           o     i
+ *                           |     |
+ *                           n     n
  */
 public class StringTree {
 
-	//================================================================== Instance Variables
+	//================================================================== Instance Variable (The head node)
 	private Node root;
 
 	//================================================================== Constructors
@@ -28,7 +40,7 @@ public class StringTree {
 	 * Constructs a tree with no words
 	 */
 	public StringTree() {
-		root = new Node(' ');
+		root = new Node(' '); // No data in the root
 	}
 
 	/*
